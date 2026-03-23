@@ -66,16 +66,16 @@ const loadIssueModal = async (issue) => {
 
 //3
 const handleSearch = () => {
-  const value = document.getElementById("search-input").value;
+  const searchValue = document.getElementById("search-input").value;
   
-  if(value.length < 1) {
+  if(searchValue.length < 1) {
     alert("Please input a search query");
     return;
   }
 
   loading(true);
 
-  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${value}`)
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
     .then((response) => response.json())
     .then((json) => displayIssues(json.data, "search"));
 };
