@@ -90,6 +90,7 @@ const loadIssues = (type) => {
     .then((json) => displayIssues(json.data, type));
 };
 
+// trying
 
 //2
 const displayIssues = (datas, type) => {
