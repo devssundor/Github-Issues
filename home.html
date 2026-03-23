@@ -41,17 +41,17 @@
                     </svg>
                     <input type="search" id="search-input" required placeholder="Search Issues"/>
                 </label>
-                <button class="btn btn-primary"> <i class="fa-solid fa-magnifying-glass"></i> New Issue</button>
+                <button id="handleSearch()" class="btn btn-primary"> <i class="fa-solid fa-magnifying-glass"></i> New Issue</button>
             </div>
         </div>
     </header>
     <main>
         <div class="flex justify-center md:justify-start gap-4 mt-15 mb-6 p-6 bg-white rounded-md shadow-md">
-            <button id="all-button" class="btn btn-primary md:w-30">All</button>
+            <button onclick="loadIssues('all')" id="all-button" class="btn btn-primary md:w-30">All</button>
 
-            <button id="open-button" class="btn btn-primary md:w-30">Open</button>
+            <button onclick="loadIssues('open')" id="open-button" class="btn btn-primary md:w-30">Open</button>
             
-            <button id="closed-button" class="btn btn-primary md:w-30">Closed</button>
+            <button onclick="loadIssues('closed')" id="closed-button" class="btn btn-primary md:w-30">Closed</button>
         </div>
         <div class="flex flex-col md:flex-row items-center justify-between p-6 bg-white rounded-md shadow-lg gap-4">
             <div class="flex items-center justify-center gap-3">
@@ -59,7 +59,7 @@
                     <img class="w-8 h-8" src="./assets/Aperture.png" alt="Aperture Image">
                 </div>
                 <div class="flex flex-col">
-                    <h2 class="font-semibold text-lg md:text-xl text-gray-900"><span id="">0</span> Issues</h2>
+                    <h2 class="font-semibold text-lg md:text-xl text-gray-900"><span id="issue-count">0</span> Issues</h2>
                     <p>Track and manage your project issues</p>
                 </div>
             </div>
@@ -70,6 +70,26 @@
                 <p>Closed</p>
             </div>
         </div>
+        <div id="spinn" class="flex flex-col items-center justify-center p-6">
+            <span class="loading loading-spinner loading-xl"></span>
+            <p>Data is loading...</p>
+      </div>
+      <div
+        id="issue-container"
+        class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6 bg-[#FBFBFB] shadow-md hidden"></div>
+
+        <dialog id="modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="modal-text"></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn btn-primary">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
+
+    <script src="./home.js"></script>
 </body>
 </html>
