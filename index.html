@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker</title>
+
+    <!-- Daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+            font-style: normal;
+        }
+    </style>
+
+    <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="m-auto py-10">
+    <!-- Header of the page -->
+     <div class="flex flex-col gap-6 bg-white max-w-xl m-auto p-8 rounded-md shadow-md text-center">
+        <div class="flex justify-center">
+            <img class="h-24 w-24" src="./assets/github-logo.png" alt="Github Logo">
+        </div>
+        <div>
+            <h1 class="font-semibold text-2xl text-gray-600">GitHub Issues Tracker</h1>
+            <h2 class="font-normal text-lg text-gray-500">Sign in to manage your issues</h2>
+        </div>
+        <div class="flex flex-col text-left pt-4 pb-4">
+            <fieldset class="fieldset pb-6">
+                <legend class="fieldset-legend">Username</legend>
+                <input id="username" class="input w-full" type="text" placeholder="Enter Username">
+                <p class="label text-green-600">Default: admin</p>
+            </fieldset>
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend">Password</legend>
+                <input id="password" class="input w-full" type="password" placeholder="Enter Password">
+                <p class="label text-green-600">Default: admin123</p>
+            </fieldset>
+        </div>
+        <button onclick="loginPage()" class="btn btn-primary w-full">Sign In</button>
+        <div>OR</div>
+        <div>
+            <p class="text-sm text-gray-400">Demo Credentials:</p>
+            <div class="p-6 bg-white text-gray-800 rounded-md">
+                <p><span class="font-semibold">Username:</span>admin</p>
+                <p><span class="font-semibold">Password:</span>admin123</p>
+            </div>
+        </div>
+     </div>
+
+     <script src="./login.js"></script>
+</body>
+</html>
