@@ -124,7 +124,7 @@ const displayIssues = (datas, type) => {
         >
           <div class="flex flex-row items-center justify-between">
             <img
-              src="./assets/${data.status}Status.png"
+              src="./assets/status-${data.status}.png"
               alt="${data.status} Status icon"
               class="w-6 h-6"
             />
